@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcDemo";
+
+service Bet
+{
+  rpc PlaceBet(PlaceBetRequest) returns (PlaceBetResponse);
+}
+
+message PlaceBetRequest
+{
+  int32 amount = 1;
+  string currency = 2;
+}
+
+message PlaceBetResponse
+{
+  int32 betId = 1;
+}
